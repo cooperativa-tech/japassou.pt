@@ -25,7 +25,7 @@
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
     "light-server": "2.6.4",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.2",
     "stylelint": "^13.2.1",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-order": "^4.0.0"
