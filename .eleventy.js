@@ -2,21 +2,24 @@ const fs = require("fs");
 const lazyImagesPlugin = require("eleventy-plugin-lazyimages");
 const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 const htmlmin = require("html-minifier");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 // Create the cache dir
 if (!fs.existsSync("cache")) fs.mkdirSync("cache");
 
-module.exports = eleventyConfig => {
+module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy({ "src/static": "." });
 
   eleventyConfig.addPlugin(lazyImagesPlugin, {
-    transformImgPath: imgPath => {
+    transformImgPath: (imgPath) => {
       return `./src/${imgPath}`;
     },
     cacheFile: "./cache/lazyimages.json",
   });
+
+  eleventyConfig.addPlugin(pluginRss);
 
   if (process.env.NODE_ENV === "production") {
     eleventyConfig.addPlugin(

@@ -1,0 +1,38 @@
+---
+permalink: feed.xml
+metadata:
+  title: Já Passou
+  url: https://japassou.pt/
+  author:
+    name: cooperativa.tech
+    email: cooperativa.tech@gmail.com
+  feed:
+    subtitle: Já passou meus amigos.
+    filename: feed.xml
+    path: feed/feed.xml
+    url: https://japassou.pt/feed.xml
+    id: https://japassou.pt/
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.feed.subtitle }}</subtitle>
+  <link href="{{ metadata.feed.url }}" rel="self"/>
+  <link href="{{ metadata.url }}"/>
+  <updated>{{ collections.articles | rssLastUpdatedDate }}</updated>
+  <id>{{ metadata.feed.id }}</id>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+    <email>{{ metadata.author.email }}</email>
+  </author>
+  {%- for article in collections.articles %}
+  {% set absoluteArticleUrl %}{{ article.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  <entry>
+    <title>{{ article.data.title }}</title>
+    <link href="{{ absoluteArticleUrl }}"/>
+    <updated>{{ article.date | rssDate }}</updated>
+    <id>{{ absoluteArticleUrl }}</id>
+    <content type="html">{{ article.templateContent | htmlToAbsoluteUrls(absoluteArticleUrl) }}</content>
+  </entry>
+  {%- endfor %}
+</feed>
