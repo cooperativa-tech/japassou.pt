@@ -10,6 +10,8 @@ layout: layouts/base.njk
   <article>
     <h1>{{ title }}</h1>
 
+    <p>{{ date | formatDate }}</p>
+
     {{ content | safe }}
   </article>
 </main>
