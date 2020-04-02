@@ -1,5 +1,21 @@
 .Page {
-  max-width: 30em;
-  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  max-width: 30rem;
+  min-height: 100vh;
+  padding: 0 2rem;
   margin: 0 auto;
+}
+
+.Page-nav {
+  margin-top: 2rem;
+}
+
+.Page-main {
+  flex-grow: 1;
+  margin-top: 2rem;
+}
+
+.Page-footer {
+  padding-bottom: 2rem;
 }

@@ -1,13 +1,13 @@
 ---
-layout: layouts/base.njk
+layout: layouts/page.njk
 ---
 
-<div class="Page">
-  <ul>
-    {%- for article in collections.articles -%}
-    <li>
-      <a href="{{article.url}}">{{ article.data.title }}</a>
-    </li>
-    {%- endfor -%}
-  </ul>
-</div>
+<h1>Já Passou</h1>
+
+<ul>
+  {%- for article in collections.articles -%}
+  <li>
+    <a href="{{article.url}}">{{ article.data.title }}</a>
+  </li>
+  {%- endfor -%}
+</ul>

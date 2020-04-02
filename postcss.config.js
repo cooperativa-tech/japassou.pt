@@ -2,6 +2,7 @@ module.exports = ({ env }) => ({
   plugins: {
     "postcss-import": {},
     precss: {},
+    "postcss-responsive-type": {},
     autoprefixer: {},
     "@fullhuman/postcss-purgecss":
       env === "production"

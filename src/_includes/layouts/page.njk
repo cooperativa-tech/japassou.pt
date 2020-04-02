@@ -2,19 +2,10 @@
 layout: layouts/base.njk
 ---
 
-<nav class="Page-nav">
-  <a href="/">Go home</a>
-</nav>
-
 <main class="Page-main">
-  <article>
-    <h1>{{ title }}</h1>
-
-    {{ content | safe }}
-  </article>
+  {{ content | safe }}
 </main>
 
 <footer class="Page-footer">
   {% include 'footer.njk' %}
 </footer>
-

@@ -1,14 +1,5 @@
 @import "normalize.css";
 
+@import "./utils/reset.css";
+@import "./utils/typography.css";
 @import "./components/page.css";
-
-*,
-*:after,
-*:before {
-  box-sizing: border-box;
-}
-
-* {
-  font-family: Arial, sans-serif;
-  font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 320)));
-}

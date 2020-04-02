@@ -1,0 +1,12 @@
+$Responsive-font-size-min: 16px;
+$Responsive-font-size-max: 20px;
+$Responsive-font-screen-max: 1600px;
+$Responsive-font-screen-min: 300px;
+
+html {
+  font-size: responsive;
+  min-font-size: $Responsive-font-size-min;
+  max-font-size: $Responsive-font-size-max;
+  upper-font-range: $Responsive-font-screen-max;
+  lower-font-range: $Responsive-font-screen-min;
+}
