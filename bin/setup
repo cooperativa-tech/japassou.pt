@@ -29,5 +29,3 @@ pp_info "setup" "Installing dependencies with yarn"
 yarn
 
 pp_info "setup" "Done! Now get insideeee"
-
-
