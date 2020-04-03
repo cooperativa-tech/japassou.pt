@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+mv dist/admin/index.html dist/admin/index.html.disabled
+
+yarn pa11y-ci dist/**/*.html
+
+mv dist/admin/index.html.disabled dist/admin/index.html
+
