@@ -23,5 +23,6 @@ jobs:
           yarn lint-styles
           yarn lint-templates
           yarn build
+          ./bin/a11y
         env:
           CI: true
