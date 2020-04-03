@@ -15,8 +15,9 @@
     "dev": "npm-run-all clean eleventy:default --parallel eleventy:watch styles:dev scripts:dev serve --print-label",
     "dev:debug": "DEBUG=* npm run dev",
     "build": "NODE_ENV=production run-s clean styles:prod scripts:prod eleventy:default --print-label",
-    "lint": "eslint --fix  src .eleventy.js --ignore-pattern !.eleventy.js",
-    "lint-styles": "stylelint 'src/**/*.css'"
+    "lint": "eslint src .eleventy.js eleventy --ignore-pattern !.eleventy.js",
+    "lint-styles": "stylelint 'src/**/*.css'",
+    "lint-templates": "prettier --check src/**/*.njk --parser html"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
