@@ -8,12 +8,8 @@ metadata:
     email: cooperativa.tech@gmail.com
   feed:
     subtitle: Já passou meus amigos.
-    filename: feed.xml
-    path: feed/feed.xml
     url: https://japassou.pt/feed.xml
-    id: https://japassou.pt/
 ---
-
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ metadata.title }}</title>
@@ -21,7 +17,7 @@ metadata:
   <link href="{{ metadata.feed.url }}" rel="self" />
   <link href="{{ metadata.url }}" />
   <updated>{{ collections.articles | rssLastUpdatedDate }}</updated>
-  <id>{{ metadata.feed.id }}</id>
+  <id>{{ metadata.url }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
